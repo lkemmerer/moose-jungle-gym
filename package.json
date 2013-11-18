@@ -4,7 +4,7 @@
   "description": "randomly generated html form for testing the moose framework",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "vows --spec"
   },
   "repository": {
     "type": "git",
