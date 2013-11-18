@@ -7,18 +7,18 @@
     <div id="test-form"></div>
   </body>
   <script src="vendor/handlebars.js"></script>
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="vendor/jquery.js"></script>
   <script src="vendor/jquery-handlebars.js"></script>
   <script type="text/javascript">
     $(function() {
       $.handlebars({
-          templatePath: '../src/templates',
+          templatePath: './templates',
           templateExtension: 'handlebars'
       });
 
-      var element_list = $.get('random_elements.json', function() {
-
-      });
+//      var element_list = $.get('random_elements.json', function() {
+//
+//      });
 
       $('#test-form').render('form', {
 

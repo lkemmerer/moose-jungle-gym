@@ -1,6 +1,9 @@
 var forms = require('./routes/form');
+var randomElements = require('./routes/random_elements');
 
 exports.setupHandlers = function setupHandlers(appServer) {
+  appServer.addEventHandler('route.fatal', function (error) { console.log("FATAL: " + error) });
+  appServer.addRoute("/elements", randomElements.getElements);
   appServer.addRoute("/form$", appServer.plugins.request, { section: "pre" });
   appServer.addRoute("/form$", forms.display);
 
