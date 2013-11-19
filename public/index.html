@@ -4,25 +4,44 @@
     <title>Moose Jungle Gym</title>
   </head>
   <body>
-    <div id="test-form"></div>
+    <form id="form">
+    </form>
   </body>
   <script src="vendor/handlebars.js"></script>
   <script src="vendor/jquery.js"></script>
   <script src="vendor/jquery-handlebars.js"></script>
   <script type="text/javascript">
     $(function() {
+      Handlebars.registerHelper('dynamictemplate', function (template, context, opts) {
+        template = template.replace(/\//g, '_');
+        var f = Handlebars.partials[template];
+        if (!f) { return "Partial not loaded"; }
+        var partial = Handlebars.compile(f)(context);
+        return new Handlebars.SafeString(partial);
+      });
+
       $.handlebars({
           templatePath: './templates',
-          templateExtension: 'handlebars'
+          templateExtension: 'handlebars',
+          partialPath: './templates/partials',
+          partialExtension: 'partial',
+          partial: ['text', 'checkbox', 'radio', 'checkbox-group', 'dropdown']
       });
 
-//      var element_list = $.get('random_elements.json', function() {
-//
-//      });
+      $.getJSON('elements.json', function() { }).
+        done(function(data) {
+          var templates = $.unique($.map(data, function(item) { return item.type; }));
+          $.each(templates, function(i, type) {
+            $.handlebars('partial', type);
+          });
 
-      $('#test-form').render('form', {
-
-      });
+          $("#form").render('fields', {
+            elements: data
+          });
+        }).
+        fail(function(data, error) {
+          alert(error);
+        });
     });
   </script>
 </html>

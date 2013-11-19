@@ -1,0 +1,3 @@
+<dd>
+<label for="{{ id }}">{{ label }}<input type="checkbox" name="{{name}}" id="{{id}}" value="1"/></label>
+</dd><dt></dt>

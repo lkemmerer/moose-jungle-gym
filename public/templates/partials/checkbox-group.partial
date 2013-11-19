@@ -1,0 +1,9 @@
+<dd>{{label}}</dd>
+<dt>
+{{#each choices}}
+  <label for="{{ ../name }}">
+    {{ this }}
+    <input type="checkbox" name="{{../name}}[]" value="{{this}}" />
+  </label><br />
+{{/each}}
+</dt>

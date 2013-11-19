@@ -1,0 +1,8 @@
+<dd>{{label }}</dd>
+<dt>
+  <select name="{{name}}" id="{{id}}">
+  {{#each choices }}
+    <option value="{{this}}">{{this}}</option>
+  {{/each}}
+  </select>
+</dt>

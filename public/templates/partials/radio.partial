@@ -1,0 +1,6 @@
+<dd>{{label }}</dd>
+<dt>
+  {{#each choices }}
+    <input type="radio" name="{{../name}}" value="{{this}}">{{this }}</input>
+  {{/each}}
+</dt>
