@@ -1,29 +1,29 @@
 exports.allTheThings = [
   {
-    name: 'first_name',
+    label: 'first_name',
     types: ['text'],
-    labels: ['first-name', 'nombre', 'prénom', 'vorname']
+    names: ['first-name', 'nombre', 'prénom', 'vorname']
   },
   { 
-    name: 'last_name',
+    label: 'last_name',
     types: ['text'],
-    labels: ['last-name', 'nachname', 'apellido', 'nom-de-famille']
+    names: ['last-name', 'nachname', 'apellido', 'nom-de-famille']
   },
   { 
-    name: 'favorite_color',
+    label: 'favorite_color',
     types: ['radio', 'dropdown'],
-    labels: ['favorite-color', 'color-favorito', 'couleur-préférée', 'lieblingsfarbe'],
+    names: ['favorite-color', 'color-favorito', 'couleur-préférée', 'lieblingsfarbe'],
     choices: ['Blue', 'Not Red', 'Taupe', 'Go Away']
   },
   { 
-    name: 'enjoys_cats',
+    label: 'enjoys_cats',
     types: ['checkbox'],
-    labels: ['do-you-like-cats', 'mögen-sie-katzen', 'te-gustan-los-gatos', 'aimez-vous-les-chats']
+    names: ['do-you-like-cats', 'mögen-sie-katzen', 'te-gustan-los-gatos', 'aimez-vous-les-chats']
   },
   { 
-    name: 'languages',
+    label: 'languages',
     types: ['checkbox-group'],
-    labels: ['languages', 'langues ', 'sprachen', 'idiomas'],
+    names: ['languages', 'langues ', 'sprachen', 'idiomas'],
     choices: ['English', 'French', 'German', 'Spanish']
   }
 ];

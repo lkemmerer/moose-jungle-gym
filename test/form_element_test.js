@@ -13,14 +13,19 @@ vows.describe('form element creation').addBatch({
     var randomized = new FormElement([{name: 'foo', label: 'bar'}]);
     assert.equal(randomized.type, 'text');
   },
-  'randomly picks a label': function() {
-    var randomized = new FormElement({labels: ['strawberry', 'grapefruit']});
-    assert.isString(randomized.label);
-    assert.include(['strawberry', 'grapefruit', ''], randomized.label);
+  'randomly picks a name': function() {
+    var randomized = new FormElement({names: ['strawberry', 'grapefruit']});
+    assert.isString(randomized.name);
+    assert.include(['strawberry', 'grapefruit'], randomized.name);
   },
-  'passes on name and choices from options': function() {
-    var randomized = new FormElement({name: 'fruit', choices: ['strawberry', 'grapefruit']});
-    assert.equal(randomized.name, 'fruit');
+  'randomly picks an id': function() {
+    var randomized = new FormElement({names: ['strawberry', 'grapefruit']});
+    assert.isString(randomized.id);
+    assert.include(['strawberry', 'grapefruit', ''], randomized.id);
+  },
+  'passes on label and choices from options': function() {
+    var randomized = new FormElement({label: 'fruit', choices: ['strawberry', 'grapefruit']});
+    assert.equal(randomized.label, 'fruit');
     assert.deepEqual(randomized.choices, ['strawberry', 'grapefruit']);
   }
 }).export(module);
