@@ -20,4 +20,5 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('grunt-handlebars-compiler');
   grunt.registerTask('compile-hbs', ['handlebars:templates', 'handlebars:partials']);
+  grunt.registerTask('heroku:production', 'compile-hbs');
 };

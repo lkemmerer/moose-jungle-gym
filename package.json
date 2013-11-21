@@ -13,6 +13,10 @@
   "keywords": [
     "testing"
   ],
+  "dependencies": {
+    "grunt": "*",
+    "grunt-handlebars-compiler": "*"
+  },
   "author": "laurie kemmerer",
   "license": "BSD"
 }
